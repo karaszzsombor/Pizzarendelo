@@ -25,7 +25,7 @@ namespace Pizzarendelő
 
         }
 
-        private void add_btn(object sender, RoutedEventArgs e)
+        private void PizzaHozzad()
         {
             string new_pizza = pizza_textbox.Text;
             if(pizzak.Contains(new_pizza))
@@ -41,7 +41,37 @@ namespace Pizzarendelő
                 pizzak.Add(new_pizza);
                 pizza_list.ItemsSource = null;
                 pizza_list.ItemsSource = pizzak;
+            }
+        }
+        private void add_btn(object sender, RoutedEventArgs e)
+        {
+            PizzaHozzad();
+        }
+        private void pizza_textbox_keydown(object sender, KeyEventArgs e)
+        {
+            if(e.Key == Key.Enter)
+            {
+                PizzaHozzad();
+            }
+        }
 
+        private void PizzaTorol()
+        {
+            string kivalasztott = pizza_list.SelectedItem as string;
+            pizzak.Remove(kivalasztott);
+            pizza_list.ItemsSource = null;
+            pizza_list.ItemsSource = pizzak;
+        }
+        private void del_btn(object sender, RoutedEventArgs e)
+        {
+            PizzaTorol();
+        }
+
+        private void pizza_list_keydown(object sender, KeyEventArgs e)
+        {
+            if(e.Key == Key.Delete)
+            {
+                PizzaTorol();
             }
         }
     }

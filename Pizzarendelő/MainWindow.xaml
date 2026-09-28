@@ -21,13 +21,13 @@
         
         <ListBox x:Name="pizza_list"
              Grid.Column="0"
-             Grid.Row="0"/>
+             Grid.Row="0" KeyDown="pizza_list_keydown"/>
 
         <TextBox x:Name="pizza_textbox"
                  Grid.Column="1"
                  Grid.Row="0"
                  VerticalAlignment="Top"
-                 Margin="15,0,15,0"
+                 Margin="15,0,15,0" KeyDown="pizza_textbox_keydown"
             />
 
         <Button x:Name="add_button"
@@ -35,9 +35,20 @@
             Grid.Row="0"
             Height="25"
             VerticalAlignment="Center"
-            Margin="35,10,35,155"
+            Margin="35,10,35,150"
             Content="Add pizza"
-            FontWeight="Bold" Click="add_btn"
+            FontWeight="Bold"
+            Click="add_btn"
+            />
+
+        <Button x:Name="delete_button"
+                Grid.Column="1"
+                Grid.Row="0"
+                Height="25"
+                VerticalAlignment="Center"
+                Margin="35,10,35,75"
+                Content="Delete pizza"
+                FontWeight="Bold" Click="del_btn"
             />
     </Grid>
 </Window>
