@@ -8,47 +8,122 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="200"/>
-            <ColumnDefinition Width="150"/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        
-        
+
+
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        
+
+
+        <Label Content="Kínálat"
+               Grid.Column="0"
+               Grid.Row="0"
+               Width="62"
+               Height="30"
+               VerticalAlignment="Top"
+               FontWeight="Bold"
+               FontSize="16"
+               />
+
         <ListBox x:Name="pizza_list"
              Grid.Column="0"
-             Grid.Row="0" KeyDown="pizza_list_keydown"/>
+             Grid.Row="0"
+             KeyDown="pizza_list_keydown"
+             Margin="0,30,0,0"
+                 />
 
         <TextBox x:Name="pizza_textbox"
                  Grid.Column="1"
                  Grid.Row="0"
                  VerticalAlignment="Top"
-                 Margin="15,0,15,0" KeyDown="pizza_textbox_keydown"
+                 Margin="35,85,35,0"
+                 KeyDown="pizza_textbox_keydown"
             />
 
-        <Button x:Name="add_button"
+        <Button x:Name="add_pizza_button"
             Grid.Column="1"
             Grid.Row="0"
             Height="25"
-            VerticalAlignment="Center"
-            Margin="35,10,35,150"
+            VerticalAlignment="Top"
+            Margin="35,108,35,0"
             Content="Add pizza"
             FontWeight="Bold"
             Click="add_btn"
             />
 
-        <Button x:Name="delete_button"
+        <Button x:Name="delete_pizza_button"
                 Grid.Column="1"
                 Grid.Row="0"
                 Height="25"
-                VerticalAlignment="Center"
-                Margin="35,10,35,75"
+                VerticalAlignment="Top"
+                Margin="35,138,35,0"
                 Content="Delete pizza"
-                FontWeight="Bold" Click="del_btn"
+                FontWeight="Bold"
+                Click="del_btn"
             />
+
+
+
+        <Label Content="Rendelés"
+               Grid.Column="2"
+               Grid.Row="0"
+               Width="78"
+               Height="35"
+               VerticalAlignment="Top"
+               FontWeight="Bold"
+               FontSize="16"
+            />
+
+        <ListBox x:Name="order_list"
+                 Grid.Column="2"
+                 Grid.Row="0"
+                 Margin="0,30,0,0" KeyDown="ordero_list_keydown"
+            />
+        <TextBox x:Name="order_size_textbox"
+                 Grid.Column="3"
+                 Grid.Row="0"
+                 VerticalAlignment="Top"
+                 Margin="35,85,35,0"
+                 KeyDown="order_textbox_keydown"
+            />
+
+        <TextBlock x:Name="order_count"
+                   Grid.Column="3"
+                   VerticalAlignment="Top"
+                   Text="Rendelések száma: "
+            />
+
+        <Button x:Name="add_order_button"
+            Grid.Column="3"
+            Height="25"
+            VerticalAlignment="Top"
+            Margin="35,108,35,0"
+            Content="Add order"
+            FontWeight="Bold" Click="add_order_btn"
+            />
+
+        <Button x:Name="delete_order"
+                Grid.Column="3"
+                Height="25"
+                VerticalAlignment="Top"
+                Margin="5,138,100,0"
+                Content="Delete order"
+                FontWeight="Bold" Click="del_order"
+            />
+
+        <Button x:Name="delete_all_order"
+                Grid.Column="3"
+                Height="25"
+                VerticalAlignment="Top"
+                Margin="100,138,5,0"
+                Content="Delete all order"
+                FontWeight="Bold" Click="del_all_order"
+            />
+
     </Grid>
 </Window>
